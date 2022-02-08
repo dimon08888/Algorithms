@@ -32,3 +32,28 @@ function shortStr(str) {
 }
 
 // console.log(shortStr('aaaabbcccccce'));
+
+// function countApplesAndOranges(s, t, a, b, apples, oranges) {
+//     let result = [0, 0];
+//     apples.forEach((apple) => {
+//         let distance = apple + a;
+//         if (distance >= s && distance <= t) result[0] += 1;
+//     })
+//     oranges.forEach((orange) => {
+//         let distance = orange + b;
+//         if (distance >= s && distance <= t) result[1] += 1;
+//     })
+//
+//     result.forEach((result) => console.log(result));
+// }
+
+countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
+
+function countApplesAndOranges(s, t, a, b, apples, oranges) {
+  console.log(
+    apples.map(apple => apple + a).filter(apple => apple >= s && apple <= t).length,
+  );
+  console.log(
+    oranges.map(orange => orange + b).filter(orange => orange >= s && orange <= t).length,
+  );
+}
