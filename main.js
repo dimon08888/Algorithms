@@ -47,7 +47,7 @@ function shortStr(str) {
 //     result.forEach((result) => console.log(result));
 // }
 
-countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
+// countApplesAndOranges(7, 11, 5, 15, [-2, 2, 1], [5, -6]);
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(
@@ -57,3 +57,16 @@ function countApplesAndOranges(s, t, a, b, apples, oranges) {
     oranges.map(orange => orange + b).filter(orange => orange >= s && orange <= t).length,
   );
 }
+
+function gradingStudents(grades) {
+  for (let i = 0; i < grades.length; i++) {
+    if (grades[i] >= 38) {
+      if (grades[i] % 5 === 4 || grades[i] % 5 === 3) {
+        grades[i] = grades[i] + (5 - (grades[i] % 5));
+      }
+    }
+  }
+  return grades;
+}
+
+// console.log(gradingStudents([73, 67, 38, 33]));
