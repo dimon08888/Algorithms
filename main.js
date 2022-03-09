@@ -43,7 +43,7 @@ function shortStr(str) {
 //         let distance = orange + b;
 //         if (distance >= s && distance <= t) result[1] += 1;
 //     })
-//
+
 //     result.forEach((result) => console.log(result));
 // }
 
@@ -70,3 +70,62 @@ function gradingStudents(grades) {
 }
 
 // console.log(gradingStudents([73, 67, 38, 33]));
+
+function oddCount(n) {
+  return Math.floor(n / 2);
+}
+
+// console.log(oddCount(15));
+
+function save(sizes, hd) {
+  let sum = 0;
+  let count = 0;
+
+  for (const size of sizes) {
+    if (sum + size > hd) break;
+    sum += size;
+    count++;
+  }
+  return count;
+}
+
+// console.log(save([4, 4, 4, 3, 3], 12));
+
+function smash(arr) {
+  let str = '';
+  for (let i = 0; i < arr.length; i++) {
+    if (str.length === 0) {
+      str = arr[i].trim();
+    } else {
+      str = str.trim() + ' ' + arr[i];
+    }
+  }
+  return str;
+
+  // return arr.join(' ');
+}
+
+// console.log(smash(['hello', 'world', 'привет']));
+
+function isPolindromVersion3(str) {
+  const lowerStr = str.toLowerCase();
+  return lowerStr === str.split('').reverse().join('');
+}
+
+// console.log(isPolindromVersion3('racecar'));
+
+function fizzBuzz(num) {
+  for (let i = 0; i < num; i++) {
+    if (i % 3 === 0 && i % 5 === 0) {
+      console.log('fizzBuzz');
+    } else if (i % 3 === 0) {
+      console.log('fizz');
+    } else if (i % 5 === 0) {
+      console.log('buzz');
+    } else {
+      console.log(i);
+    }
+  }
+}
+
+// console.log(fizzBuzz(100));
