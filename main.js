@@ -129,3 +129,55 @@ function fizzBuzz(num) {
 }
 
 // console.log(fizzBuzz(100));
+
+const fibanacci = num => {
+  // const result = [0, 1];
+  // for (let i = 2; i <= num; i++) {
+  //     const first = result[i - 1];
+  //     const second = result[i - 2];
+  //     result.push(first + second);
+  // }
+  // return result[num];
+  if (num < 2) return num;
+  return fibanacci(num - 1) + fibanacci(num - 2);
+};
+
+// console.log(fibanacci(10))
+
+function doubleChar(str) {
+  return str
+    .split('')
+    .map(el => el + el)
+    .join('');
+}
+
+// console.log(doubleChar('Adidas'));
+
+function gooseFilter(birds) {
+  var geese = ['African', 'Roman Tufted', 'Toulouse', 'Pilgrim', 'Steinbacher'];
+  return birds.filter(bird => !geese.includes(bird));
+}
+
+// console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
+
+function dontGiveMeFive(start, end) {
+  let count = 0;
+  for (let i = start; i <= end; i++) {
+    count = String(i).includes('5') ? count : count + 1;
+  }
+  return count;
+}
+
+// console.log(dontGiveMeFive(4,17));
+
+function addTwoNumbers(num1, num2) {
+  const arr1 = Number(num1.reverse().join(''));
+  const arr2 = Number(num2.reverse().join(''));
+  const sum = String(arr1 + arr2);
+  return sum
+    .split('')
+    .map(el => Number(el))
+    .reverse();
+}
+
+// console.log(addTwoNumbers([2,4,3], [5,6,4])) 342 + 465 =  807 -> [7,0,8]
