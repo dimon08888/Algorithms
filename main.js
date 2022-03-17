@@ -181,3 +181,52 @@ function addTwoNumbers(num1, num2) {
 }
 
 // console.log(addTwoNumbers([2,4,3], [5,6,4])) 342 + 465 =  807 -> [7,0,8]
+
+//Yandex!!!!
+function numbers(nums) {
+  const sortedNums = nums.slice().sort((a, b) => a - b);
+
+  const ranges = []; // [[0, 1, 2, 3, 4, 5], [8, 9], [11]]
+  let tempArr = []; // [11]
+
+  for (let i = 0; i < sortedNums.length; i++) {
+    if (tempArr.length === 0 || sortedNums[i] - tempArr[tempArr.length - 1] === 1) {
+      tempArr.push(sortedNums[i]);
+    } else {
+      ranges.push(tempArr);
+      tempArr = [sortedNums[i]];
+    }
+  }
+
+  ranges.push(tempArr);
+
+  return ranges
+    .map(range =>
+      range.length > 1 ? `${range[0]}-${range[range.length - 1]}` : range[0],
+    )
+    .join(',');
+}
+
+// console.log(numbers([1, 0, 3, 2, 4, 5, 9, 8, 11]));
+
+// [0, 1, 2, 3, 4, 5, 8, 9, 11] -> [[0, 1, 2, 3, 4, 5], [8, 9], [11]] -> ['0-5', '8-9', '11'] -> '0-5,8-9,11'
+
+// function search(nums: number[], target: number): number {
+//    let low = 0;
+//    let high = nums.length - 1;
+
+//    while (low <= high) {
+//        let mid = Math.floor((low + high) / 2)
+//        if (target > nums[mid]) {
+//            low = mid + 1;
+//        }
+//        else if (target < nums[mid]) {
+//            high = mid - 1;
+//        } else {
+//           return mid;
+//        }
+//    }
+
+//     return -1;
+
+// }
