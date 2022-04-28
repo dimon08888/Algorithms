@@ -1,34 +1,34 @@
 function duplicateCharacter(str) {
-  return new Set(str).size !== str.length;
+  return new Set(str).size !== str.length
 }
 // console.log(duplicateCharacter('Hello'));
 
 function changeSpace(str) {
-  return str.split('').map(el => (el === ' ' ? (el = '%20') : el));
+  return str.split('').map(el => (el === ' ' ? (el = '%20') : el))
 }
 
 // console.log(changeSpace(' Vasiliy Alibabaevich'));
 function isPolindrom(str) {
   if (str[0] === str[str.length - 1]) {
-    return str.length === 1 ? true : isPolindrom(str.slice(1, -1));
+    return str.length === 1 ? true : isPolindrom(str.slice(1, -1))
   }
-  return false;
+  return false
 }
 
 // console.log(isPolindrom('racecar1'));
 
 function shortStr(str) {
-  const result = [];
+  const result = []
   const obj = str.split('').reduce((acc, el) => {
-    acc[el] = (acc[el] || 0) + 1;
-    return acc;
-  }, {});
+    acc[el] = (acc[el] || 0) + 1
+    return acc
+  }, {})
 
-  const arrayKeyValue = Object.entries(obj);
+  const arrayKeyValue = Object.entries(obj)
   for (const [key, value] of arrayKeyValue) {
-    result.push(`${key}${value}`);
+    result.push(`${key}${value}`)
   }
-  return result.join('');
+  return result.join('')
 }
 
 // console.log(shortStr('aaaabbcccccce'));
@@ -51,56 +51,56 @@ function shortStr(str) {
 
 function countApplesAndOranges(s, t, a, b, apples, oranges) {
   console.log(
-    apples.map(apple => apple + a).filter(apple => apple >= s && apple <= t).length,
-  );
+    apples.map(apple => apple + a).filter(apple => apple >= s && apple <= t).length
+  )
   console.log(
-    oranges.map(orange => orange + b).filter(orange => orange >= s && orange <= t).length,
-  );
+    oranges.map(orange => orange + b).filter(orange => orange >= s && orange <= t).length
+  )
 }
 
 function gradingStudents(grades) {
   for (let i = 0; i < grades.length; i++) {
     if (grades[i] >= 38) {
       if (grades[i] % 5 === 4 || grades[i] % 5 === 3) {
-        grades[i] = grades[i] + (5 - (grades[i] % 5));
+        grades[i] = grades[i] + (5 - (grades[i] % 5))
       }
     }
   }
-  return grades;
+  return grades
 }
 
 // console.log(gradingStudents([73, 67, 38, 33]));
 
 function oddCount(n) {
-  return Math.floor(n / 2);
+  return Math.floor(n / 2)
 }
 
 // console.log(oddCount(15));
 
 function save(sizes, hd) {
-  let sum = 0;
-  let count = 0;
+  let sum = 0
+  let count = 0
 
   for (const size of sizes) {
-    if (sum + size > hd) break;
-    sum += size;
-    count++;
+    if (sum + size > hd) break
+    sum += size
+    count++
   }
-  return count;
+  return count
 }
 
 // console.log(save([4, 4, 4, 3, 3], 12));
 
 function smash(arr) {
-  let str = '';
+  let str = ''
   for (let i = 0; i < arr.length; i++) {
     if (str.length === 0) {
-      str = arr[i].trim();
+      str = arr[i].trim()
     } else {
-      str = str.trim() + ' ' + arr[i];
+      str = str.trim() + ' ' + arr[i]
     }
   }
-  return str;
+  return str
 
   // return arr.join(' ');
 }
@@ -108,8 +108,8 @@ function smash(arr) {
 // console.log(smash(['hello', 'world', 'привет']));
 
 function isPolindromVersion3(str) {
-  const lowerStr = str.toLowerCase();
-  return lowerStr === str.split('').reverse().join('');
+  const lowerStr = str.toLowerCase()
+  return lowerStr === str.split('').reverse().join('')
 }
 
 // console.log(isPolindromVersion3('racecar'));
@@ -117,13 +117,13 @@ function isPolindromVersion3(str) {
 function fizzBuzz(num) {
   for (let i = 0; i < num; i++) {
     if (i % 3 === 0 && i % 5 === 0) {
-      console.log('fizzBuzz');
+      console.log('fizzBuzz')
     } else if (i % 3 === 0) {
-      console.log('fizz');
+      console.log('fizz')
     } else if (i % 5 === 0) {
-      console.log('buzz');
+      console.log('buzz')
     } else {
-      console.log(i);
+      console.log(i)
     }
   }
 }
@@ -138,9 +138,9 @@ const fibanacci = num => {
   //     result.push(first + second);
   // }
   // return result[num];
-  if (num < 2) return num;
-  return fibanacci(num - 1) + fibanacci(num - 2);
-};
+  if (num < 2) return num
+  return fibanacci(num - 1) + fibanacci(num - 2)
+}
 
 // console.log(fibanacci(10))
 
@@ -148,63 +148,63 @@ function doubleChar(str) {
   return str
     .split('')
     .map(el => el + el)
-    .join('');
+    .join('')
 }
 
 // console.log(doubleChar('Adidas'));
 
 function gooseFilter(birds) {
-  var geese = ['African', 'Roman Tufted', 'Toulouse', 'Pilgrim', 'Steinbacher'];
-  return birds.filter(bird => !geese.includes(bird));
+  var geese = ['African', 'Roman Tufted', 'Toulouse', 'Pilgrim', 'Steinbacher']
+  return birds.filter(bird => !geese.includes(bird))
 }
 
 // console.log(gooseFilter(["Mallard", "Hook Bill", "African", "Crested", "Pilgrim", "Toulouse", "Blue Swedish"]));
 
 function dontGiveMeFive(start, end) {
-  let count = 0;
+  let count = 0
   for (let i = start; i <= end; i++) {
-    count = String(i).includes('5') ? count : count + 1;
+    count = String(i).includes('5') ? count : count + 1
   }
-  return count;
+  return count
 }
 
 // console.log(dontGiveMeFive(4,17));
 
 function addTwoNumbers(num1, num2) {
-  const arr1 = Number(num1.reverse().join(''));
-  const arr2 = Number(num2.reverse().join(''));
-  const sum = String(arr1 + arr2);
+  const arr1 = Number(num1.reverse().join(''))
+  const arr2 = Number(num2.reverse().join(''))
+  const sum = String(arr1 + arr2)
   return sum
     .split('')
     .map(el => Number(el))
-    .reverse();
+    .reverse()
 }
 
 // console.log(addTwoNumbers([2,4,3], [5,6,4])) 342 + 465 =  807 -> [7,0,8]
 
 //Yandex!!!!
 function numbers(nums) {
-  const sortedNums = nums.slice().sort((a, b) => a - b);
+  const sortedNums = nums.slice().sort((a, b) => a - b)
 
-  const ranges = []; // [[0, 1, 2, 3, 4, 5], [8, 9], [11]]
-  let tempArr = []; // [11]
+  const ranges = [] // [[0, 1, 2, 3, 4, 5], [8, 9], [11]]
+  let tempArr = [] // [11]
 
   for (let i = 0; i < sortedNums.length; i++) {
     if (tempArr.length === 0 || sortedNums[i] - tempArr[tempArr.length - 1] === 1) {
-      tempArr.push(sortedNums[i]);
+      tempArr.push(sortedNums[i])
     } else {
-      ranges.push(tempArr);
-      tempArr = [sortedNums[i]];
+      ranges.push(tempArr)
+      tempArr = [sortedNums[i]]
     }
   }
 
-  ranges.push(tempArr);
+  ranges.push(tempArr)
 
   return ranges
     .map(range =>
-      range.length > 1 ? `${range[0]}-${range[range.length - 1]}` : range[0],
+      range.length > 1 ? `${range[0]}-${range[range.length - 1]}` : range[0]
     )
-    .join(',');
+    .join(',')
 }
 
 // console.log(numbers([1, 0, 3, 2, 4, 5, 9, 8, 11]));
@@ -230,3 +230,20 @@ function numbers(nums) {
 //     return -1;
 
 // }
+
+function countPositivesSumNegatives(input) {
+  if (input === null || input.length === 0) {
+    return []
+  }
+  let count = 0
+  let sum = 0
+  for (let i = 0; i < input.length; i++) {
+    if (input[i] > 0) {
+      count++
+    } else {
+      sum += input[i]
+    }
+  }
+  return [count, sum]
+}
+// [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]
